@@ -1,0 +1,25 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <title>Post: list</title>
+  </head>
+  <body>
+    <div>
+      <ol>
+        <h1>Post List</h1>
+        {%for post in posts%}
+        <li>
+          <p>Title: <a href="{%url 'detail' post.id%}">{{post.title}}</a></p>
+          <p>Author: {{post.author}}</p>
+        </li>
+        {%endfor%}
+      </ol>
+      <a href="{% url 'create' %}">Create new task</a>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Detail page</h1>
+    <p>Title: {{post.title}}</p>
+    <p>Author: {{post.author}}</p>
+    <p>Content: {{post.content}}</p>
+    <p>Publshed at: {{post.published_at}}</p>
+    <p>Category: {{post.category}}</p>
+    <p>Tags: {{post.tags}}</p>
+    <p>Status: {{post.status}}</p>
+
+    <a href="{% url 'update' post.id %}">Update</a>
+    <a href="{% url 'delete' post.id %}">Delete</a>
+    <a href="{% url 'list' %}">Back to Post lists</a>
+  </body>
+</html>
