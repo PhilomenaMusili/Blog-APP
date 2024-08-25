@@ -4,11 +4,22 @@ from .forms import PostCreateForm
 # Create your views here.
 def post_list(request):
     posts = Post.objects.all()
-    return render(request, 'index.html', {'posts':posts} )
+    title = 'list'
+    context = {
+        'posts':posts,
+        'title':title
+
+    }
+    return render(request, 'index.html', context )
 
 def post_detail(request, id):
     post = get_object_or_404(Post, id=id)
-    return render(request, 'detail.html', {'post': post})
+    title = 'Detail'
+    context = {
+        'post':post,
+        'title':title
+    }
+    return render(request, 'detail.html', context)
 
 def create_post(request):
     if request.method == 'POST':
@@ -18,7 +29,12 @@ def create_post(request):
             return redirect('list')
     else:
       form = PostCreateForm()
-    return render(request, 'create.html', {'form':form})
+    title = 'Create'
+    context = {
+        'form':form,
+        'title':title
+    }
+    return render(request, 'create.html', context)
 
 def update_post(request, id):
     post = get_object_or_404(Post, id=id) #Toget specific task
@@ -29,13 +45,22 @@ def update_post(request, id):
           return redirect('list')
     else:
         form = PostCreateForm(instance=post)
-    return render(request, 'update.html', {'form' :form})
+    title = 'Update'
+    context = {
+        'form':form,
+        'title':title
+    }
+    return render(request, 'update.html', context)
 
 def delete_post(request, id):
     post = get_object_or_404(Post, id=id) #Toget specific task to delete
     if request.method == 'POST': #check if user request is post
           post.delete()         
           return redirect('list')
-   
-    return render(request, 'delete.html', {'post' :post})
+    title = 'Delete'
+    context = {
+        'post' :post,
+        'title':title
+    }
+    return render(request, 'delete.html', context)
     

@@ -1,18 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Delete task</h1>
-    <div>
-        <form  method="post">
-            {% csrf_token %}
-            <h3>Are you sure you want to delete {{post.title}}?</h3>
-            <button type="submit">yes,Delete task</button>
-        </form>
-    </div>
-</body>
-</html>
+{% extends 'base.html' %} {% block content %}
+<h1>Delete task</h1>
+<div>
+  <form method="post">
+    {% csrf_token %}
+    <h3>Are you sure you want to delete {{post.title}}?</h3>
+    <button type="submit">yes,Delete task</button>
+  </form>
+</div>
+{% endblock content %}
