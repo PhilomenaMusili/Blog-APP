@@ -1,15 +1,17 @@
 {% extends 'base.html' %} {% block content %}
-<h1>Detail page</h1>
-<p>Title: {{post.title}}</p>
-<p>Author: {{post.author}}</p>
-<p>Content: {{post.content}}</p>
-<p>Publshed at: {{post.published_at}}</p>
-<p>Category: {{post.category}}</p>
-<p>Tags: {{post.tags}}</p>
-<p>Status: {{post.status}}</p>
-
-<a href="{% url 'update' post.id %}">Update</a>
-<a href="{% url 'delete' post.id %}">Delete</a>
-<a href="{% url 'list' %}">Back to Post lists</a>
-
+<div class="post-detail-container">
+  <h1 class="post-detail-title">Detail Page</h1>
+  <div class="post-meta">
+    <p><strong>Title:</strong> {{ post.title }}</p>
+    <p><strong>Author:</strong> {{ post.author }}</p>
+    <p><strong>Published at:</strong> {{ post.published_at }}</p>
+    <p><strong>Category:</strong> {{ post.category }}</p>
+    <p><strong>Tags:</strong> {{ post.tags }}</p>
+    <p><strong>Status:</strong> {{ post.status }}</p>
+  </div>
+  <div class="post-content">
+    <p>{{ post.content }}</p>
+  </div>
+  <a href="{% url 'list' %}" class="back-link">Back to Post List</a>
+</div>
 {% endblock content %}

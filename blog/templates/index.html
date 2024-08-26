@@ -1,17 +1,15 @@
 {% extends 'base.html' %} {% block content %}
-
-<!DOCTYPE html>
-
-<div>
-  <ol>
-    <h1>Post List</h1>
-    {%for post in posts%}
-    <li>
-      <p>Title: <a href="{%url 'detail' post.id%}">{{post.title}}</a></p>
-      <p>Author: {{post.author}}</p>
+<div class="post-list-container">
+  <h1 class="post-list-title">Post List</h1>
+  <ol class="post-list">
+    {% for post in posts %}
+    <li class="post-item">
+      <p class="post-title">
+        <a href="{% url 'detail' post.id %}">{{ post.title }}</a>
+      </p>
+      <p class="post-author">Author: {{ post.author }}</p>
     </li>
-    {%endfor%}
+    {% endfor %}
   </ol>
-  <a href="{% url 'create' %}">Create new task</a>
 </div>
 {% endblock content %}

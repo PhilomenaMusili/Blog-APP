@@ -1,6 +1,103 @@
-h1 {
-  color: brown;
+body {
+  font-family: "Arial", sans-serif;
+  line-height: 1.6;
+  background-color: #f4f4f4;
+  color: #333;
 }
+
+.post-detail-container {
+  max-width: 800px;
+  margin: 20px auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.post-detail-title {
+  font-size: 32px;
+  color: #2c3e50;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.post-meta p {
+  margin: 8px 0;
+  font-size: 16px;
+}
+
+.post-meta p strong {
+  color: #3498db;
+}
+
+.post-content {
+  margin-top: 20px;
+  font-size: 18px;
+  line-height: 1.8;
+  color: #2c3e50;
+  border-top: 1px solid #eee;
+  padding-top: 20px;
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 15px;
+  background-color: #3498db;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.back-link:hover {
+  background-color: #2980b9;
+}
+
+.post-list-container {
+  max-width: 800px;
+  margin: 20px auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.post-list-title {
+  font-size: 32px;
+  color: #2c3e50;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.post-list {
+  list-style-type: decimal;
+  padding-left: 20px;
+}
+
+.post-item {
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.post-list-title a {
+  font-size: 20px;
+  color: #3498db;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.post-list-title a:hover {
+  color: #2980b9;
+}
+
+.post-author {
+  font-size: 16px;
+  color: #7f8c8d;
+  margin-top: 5px;
+}
+
 footer {
   background-color: blanchedalmond;
   color: aquamarine;
