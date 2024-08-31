@@ -1,4 +1,4 @@
-# Django Blog Application
+# Django Blog App
 This is a simple blog application built using Django. It supports viewing a list of blog posts and detailed information about individual posts.
 
 ## Features
